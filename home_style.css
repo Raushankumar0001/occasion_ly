@@ -202,32 +202,6 @@ body.modal-open {
   object-fit: cover;
 }
 
-/* Slide animation */
-@keyframes slide {
-  0% {
-    margin-left: 0;
-  }
-
-  30% {
-    margin-left: 0;
-  }
-
-  35% {
-    margin-left: -100%;
-  }
-
-  65% {
-    margin-left: -100%;
-  }
-
-  70% {
-    margin-left: -200%;
-  }
-
-  100% {
-    margin-left: -200%;
-  }
-}
 
 /* Slider Navigation Buttons */
 .slider-nav {
@@ -313,7 +287,7 @@ a {
   margin-bottom: 30px;
 }
 
-.event-cards {
+.event-cards-contaner {
   display: flex;
   justify-content: center;
   gap: 20px;
