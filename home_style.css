@@ -248,7 +248,7 @@ body.modal-open {
 
 .hero-text {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   text-align: center;
   pointer-events: none;
   }
