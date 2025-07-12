@@ -535,7 +535,6 @@ view-all-services {
   display: flex;
   align-items: flex-end;
   padding: 10px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent), url('your-photo.jpg');
   background-blend-mode: darken;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
