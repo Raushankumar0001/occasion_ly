@@ -54,6 +54,19 @@ body.modal-open {
   color: #8000c8;
 }
 
+.vendor-btn-header{
+  padding: 8px 18px;
+  background-color: #8000c8;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+}
+
 .login-btn-header {
   padding: 8px 18px;
   background-color: #8000c8;

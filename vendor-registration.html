@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vendor Registration - Occasionly</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 50;
+      background: #fff5f8;
+      /* light pastel background */
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px 20px;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: #942edcec;
+      /* Occasion.ly pink */
+    }
+
+    header p {
+      color: #555;
+      margin-top: 5px;
+    }
+
+    .form-container {
+      max-width: 600px;
+      margin: 30px auto;
+      background: #d5a5ed97;
+      padding: 100px;
+      border-radius: 25px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      text-align: left;
+      width: 90%;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #444;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      outline: none;
+      font-size: 1rem;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: #942edcec;
+      box-shadow: 0 0 4px rgba(8, 8, 8, 0.914);
+    }
+
+    /* Budget slider */
+    .budget-display {
+      margin-top: 8px;
+      font-weight: bold;
+      color: #942edcec;
+    }
+
+    input[type=range] {
+      width: 100%;
+      accent-color: #942edcec;
+    }
+
+    /* Upload */
+    .upload-preview {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+
+    .upload-preview img {
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 2px solid #eee;
+    }
+
+    /* Button */
+    .btn-submit {
+      display: block;
+      width: 100%;
+      background: #942edcec;
+      color: white;
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn-submit:hover {
+      background: #942edcec;
+    }
+
+
+    @media (max-width: 600px) {
+      .form-container {
+        margin: 15px;
+        padding: 20px;
+      }
+      
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Register as a Vendor</h1>
+    <p>Grow your business by joining Occasionly’s vendor network</p>
+  </header>
+
+  <div class="form-container">
+    <form id="vendorForm">
+
+      <!-- Vendor Type -->
+      <div class="form-group">
+        <label for="vendorType">Vendor Type</label>
+        <select id="vendorType" required>
+          <option value="">-- Select Vendor Type --</option>
+          <option>Venue</option>
+          <option>Decorator</option>
+          <option>Caterer</option>
+          <option>Music & DJ</option>
+          <option>Pandit</option>
+          <option>Transport</option>
+          <option>Photographer</option>
+          <option>Videographer</option>
+          <option>Artist</option>
+        </select>
+      </div>
+
+      <!-- Personal Details -->
+      <div class="form-group">
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" placeholder="Enter your name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="businessName">Business Name</label>
+        <input type="text" id="businessName" placeholder="Your business name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="example@email.com" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" placeholder="+91 9876543210" required>
+      </div>
+
+      <div class="form-group">
+        <label for="location">Location (City, State)</label>
+        <input type="text" id="location" placeholder="e.g. Mumbai, Maharashtra" required>
+      </div>
+
+      <!-- Budget -->
+      <div class="form-group">
+        <label for="budget">Set Your Budget</label>
+        <input type="range" id="budget" min="2000" max="500000" step="5000" value="50000">
+        <div class="budget-display">₹ <span id="budgetValue">50,000</span></div>
+      </div>
+
+      <!-- Portfolio Upload -->
+      <div class="form-group">
+        <label for="portfolio">Upload Portfolio Images (min 5)</label>
+        <input type="file" id="portfolio" multiple accept="image/*">
+        <div class="upload-preview" id="preview"></div>
+      </div>
+
+      <!-- Submit -->
+      <button type="submit" class="btn-submit">Register Now</button>
+    </form>
+  </div>
+
+  <script>
+    // Budget slider live display
+    const budgetInput = document.getElementById('budget');
+    const budgetValue = document.getElementById('budgetValue');
+    budgetInput.addEventListener('input', () => {
+      budgetValue.textContent = parseInt(budgetInput.value).toLocaleString();
+    });
+
+    // Portfolio upload preview
+    const portfolioInput = document.getElementById('portfolio');
+    const preview = document.getElementById('preview');
+    portfolioInput.addEventListener('change', () => {
+      preview.innerHTML = '';
+      const files = portfolioInput.files;
+      for (let i = 0; i < Math.min(files.length, 5); i++) {
+        const img = document.createElement('img');
+        img.src = URL.createObjectURL(files[i]);
+        preview.appendChild(img);
+      }
+    });
+
+    // Handle form submit
+    document.getElementById('vendorForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      alert("Vendor Registered Successfully 🎉");
+      // 👉 Here you can add code to send data to your backend / Google Sheet
+    });
+  </script>
+
+</body>
+
+</html>
