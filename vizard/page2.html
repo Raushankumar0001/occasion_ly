@@ -19,7 +19,7 @@
       style='--select-button-svg: url(&apos;data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724px%27 height=%2724px%27 fill=%27rgb(136,99,105)%27 viewBox=%270 0 256 256%27%3e%3cpath d=%27M181.66,170.34a8,8,0,0,1,0,11.32l-48,48a8,8,0,0,1-11.32,0l-48-48a8,8,0,0,1,11.32-11.32L128,212.69l42.34-42.35A8,8,0,0,1,181.66,170.34Zm-96-84.68L128,43.31l42.34,42.35a8,8,0,0,0,11.32-11.32l-48-48a8,8,0,0,0-11.32,0l-48,48A8,8,0,0,0,85.66,85.66Z%27%3e%3c/path%3e%3c/svg%3e&apos;); font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'
     >
       <div class="layout-container flex h-full grow flex-col">
-        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f4f0f1] px-10 py-3">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f4f0f1] px-4 sm:px-10 py-3">
           <div class="flex items-center gap-8">
             <div class="flex items-center gap-4 text-[#181112]">
               <div class="size-4">
@@ -32,7 +32,7 @@
               </div>
               <h2 class="text-[#181112] text-lg font-bold leading-tight tracking-[-0.015em]"><a href="../index.html">Occasion.ly</a></h2>
             </div>
-            <div class="flex items-center gap-9">
+            <div class="hidden sm:flex items-center gap-9">
               <a class="text-[#181112] text-sm font-medium leading-normal" href="#">Home</a>
               <a class="text-[#181112] text-sm font-medium leading-normal" href="#">Vendors</a>
               <a class="text-[#181112] text-sm font-medium leading-normal" href="#">Planning Tools</a>
@@ -40,8 +40,15 @@
               <a class="text-[#181112] text-sm font-medium leading-normal" href="#">Pricing</a>
             </div>
           </div>
-          <div class="flex flex-1 justify-end gap-8">
-            <label class="flex flex-col min-w-40 !h-10 max-w-64">
+          <div class="flex flex-1 justify-end gap-8 items-center">
+            <div class="sm:hidden">
+              <button id="menu-button" class="text-[#181112] focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+              </button>
+            </div>
+            <label class="hidden sm:flex flex-col min-w-40 !h-10 max-w-64">
               <div class="flex w-full flex-1 items-stretch rounded-xl h-full">
                 <div
                   class="text-[#886369] flex border-none bg-[#f4f0f1] items-center justify-center pl-4 rounded-l-xl border-r-0"
@@ -73,7 +80,7 @@
             ></div>
           </div>
         </header>
-        <div class="px-40 flex flex-1 justify-center py-5">
+        <div class="px-4 sm:px-10 md:px-20 lg:px-40 flex flex-1 justify-center py-5">
           <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
             <div class="flex flex-col gap-3 p-4">
               <div class="flex gap-6 justify-between">
@@ -83,7 +90,7 @@
               <div class="rounded bg-[#e5dcdd]"><div class="h-2 rounded bg-[#181112]" style="width: 20%;"></div></div>
               <p class="text-[#886369] text-sm font-normal leading-normal">Venue Selection</p>
             </div>
-            <div class="flex flex-wrap justify-between gap-3 p-4"><p class="text-[#181112] tracking-light text-[32px] font-bold leading-tight min-w-72">Pick Your Venue</p></div>
+            <div class="flex flex-wrap justify-between gap-3 p-4"><p class="text-[#181112] tracking-light text-2xl sm:text-3xl font-bold leading-tight min-w-72">Pick Your Venue</p></div>
             <div class="px-4 py-3">
               <label class="flex flex-col min-w-40 h-12 w-full">
                 <div class="flex w-full flex-1 items-stretch rounded-xl h-full">
@@ -107,7 +114,7 @@
                 </div>
               </label>
             </div>
-            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+            <div class="flex flex-col sm:flex-row max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
               <label class="flex flex-col min-w-40 flex-1">
                 <p class="text-[#181112] text-base font-medium leading-normal pb-2">Select Country</p>
                 <input
@@ -125,7 +132,7 @@
                 />
               </label>
             </div>
-            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+            <div class="flex flex-col sm:flex-row max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
               <label class="flex flex-col min-w-40 flex-1">
                 <p class="text-[#181112] text-base font-medium leading-normal pb-2">Select City</p>
                 <select
@@ -162,7 +169,7 @@
               </div>
             </div>
             <div class="p-4 @container">
-              <div class="flex flex-col items-stretch justify-start rounded-xl @xl:flex-row @xl:items-start">
+              <div class="flex flex-col sm:flex-row items-stretch justify-start rounded-xl">
                 <div
                   class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
                   style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCaCUwsUsqBgMlJXrfQ6wumsrHTSKpprHws3EWPdBcQao1LwO7YksAAQ4_FVKRvj3k22ojdGqR_IkDYmPCc_VR7yLIHCXJWQIBeAkw4496Hxz3B2XI1o-YjAETskkHlOE48rg7HT61JGJHZ_v7CqzIFoz_wqNFDN1j6mvuljiUmq8VqM0EUs4XZ8VZmo_ApHFO4G2Vwe9UOtV3zM5hP4TYXiFty5whpPctxjeOkl12Za1GrO7rsvbR73afLVMbZH9iyzmmPefYMAyc");'
@@ -179,7 +186,7 @@
               </div>
             </div>
             <div class="p-4 @container">
-              <div class="flex flex-col items-stretch justify-start rounded-xl @xl:flex-row @xl:items-start">
+              <div class="flex flex-col sm:flex-row items-stretch justify-start rounded-xl">
                 <div
                   class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
                   style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuASczA3lwF1p22CSXIjzgdK_c7t5tE4Pgzt4b2jUrO5vL5FyT08J38GrhMJPHqCn6GMcoSbKiWpf0wcIlMFQlhhu7sk0soM59ZUZadiAdlKqzzANKJccnPFaMXvpqshG6KWOLnWUYnbHu-Dk9VpzgHl1gNuyZed_x76XzA7oBVVH1Yxr2OJ9eikPZ1PIkXFcSuM_HDhHOmzAsogpe35drg8Yip1CmacKV8txWimGEsnOIy6zZeCtEkwjVKFCfyKiEZKYlzWwCfUN-U");'
@@ -196,7 +203,7 @@
               </div>
             </div>
             <div class="p-4 @container">
-              <div class="flex flex-col items-stretch justify-start rounded-xl @xl:flex-row @xl:items-start">
+              <div class="flex flex-col sm:flex-row items-stretch justify-start rounded-xl">
                 <div
                   class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
                   style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCes_w-Pffw1kvIz7VSou3Vxw6tzIG8z3zheFBbINrQ-CzC_T_WYaAlvHQlch8AQVPa_ansB357URqgZdOgi9MblYQPKLjZlKUTbt-8Ll5BFgplMjCLxfrD3XDe0rqiI5sc-pRT2_8xPBvs275Gc-xOoOpcB8tgM1rLW6NG7CRsrfrOtaV0kL0O-wzodl43UAbSC4XWq1v_tv53tz5kuItrAyq2yUFNam1O-eHMV5GxVSbs-Qiwnwy_XpFjy5NHW_HptqZP16NiErQ");'
@@ -214,20 +221,20 @@
                 </div>
               </div>
             </div>
-            <div class="flex items-center justify-center p-4">
-              <a href="#" class="flex size-10 items-center justify-center">
+                        <div class="flex items-center justify-center p-4">
+              <a href="#" class="flex size-8 sm:size-10 items-center justify-center">
                 <div class="text-[#181112]" data-icon="CaretLeft" data-size="18px" data-weight="regular">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="currentColor" viewBox="0 0 256 256">
                     <path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"></path>
                   </svg>
                 </div>
               </a>
-              <a class="text-sm font-bold leading-normal tracking-[0.015em] flex size-10 items-center justify-center text-[#181112] rounded-full bg-[#f4f0f1]" href="#">1</a>
-              <a class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-[#181112] rounded-full" href="#">2</a>
-              <a class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-[#181112] rounded-full" href="#">3</a>
-              <a class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-[#181112] rounded-full" href="#">4</a>
-              <a class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-[#181112] rounded-full" href="#">5</a>
-              <a href="#" class="flex size-10 items-center justify-center">
+              <a class="text-sm font-bold leading-normal tracking-[0.015em] flex size-8 sm:size-10 items-center justify-center text-[#181112] rounded-full bg-[#f4f0f1]" href="#">1</a>
+              <a class="text-sm font-normal leading-normal flex size-8 sm:size-10 items-center justify-center text-[#181112] rounded-full" href="#">2</a>
+              <a class="text-sm font-normal leading-normal flex size-8 sm:size-10 items-center justify-center text-[#181112] rounded-full" href="#">3</a>
+              <a class="text-sm font-normal leading-normal flex size-8 sm:size-10 items-center justify-center text-[#181112] rounded-full" href="#">4</a>
+              <a class="text-sm font-normal leading-normal flex size-8 sm:size-10 items-center justify-center text-[#181112] rounded-full" href="#">5</a>
+              <a href="#" class="flex size-8 sm:size-10 items-center justify-center">
                 <div class="text-[#181112]" data-icon="CaretRight" data-size="18px" data-weight="regular">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="currentColor" viewBox="0 0 256 256">
                     <path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path>
@@ -238,12 +245,12 @@
             <div class="flex justify-stretch">
               <div class="flex flex-1 gap-3 flex-wrap px-4 py-3 justify-between">
                 <button onclick="window.location.href='page1.html'"
-                  class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#f4f0f1] text-[#181112] text-sm font-bold leading-normal tracking-[0.015em]"
+                  class="flex flex-1 sm:flex-none min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#f4f0f1] text-[#181112] text-sm font-bold leading-normal tracking-[0.015em]"
                 >
                   <span class="truncate">Back</span>
                 </button>
                 <button onclick="window.location.href='page3.html'"
-                  class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#ea4762] text-white text-sm font-bold leading-normal tracking-[0.015em]"
+                  class="flex flex-1 sm:flex-none min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#ea4762] text-white text-sm font-bold leading-normal tracking-[0.015em]"
                 >
                   <span class="truncate">Next</span>
                 </button>
