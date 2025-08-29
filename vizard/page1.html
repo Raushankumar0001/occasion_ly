@@ -9,14 +9,15 @@
   <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
 
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-  <div class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden"
+  <div class="relative flex flex-col min-h-screen bg-white group/design-root overflow-x-hidden"
     style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'>
-    <div class="layout-container flex h-full grow flex-col">
+    <div class="layout-container flex flex-col h-full grow">
       <header
-        class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f4f0f1] px-10 py-3">
+        class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f4f0f1] px-4 sm:px-10 py-3">
         <div class="flex items-center gap-4 text-[#181112]">
           <div class="size-4">
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -26,7 +27,7 @@
                   fill="currentColor"></path>
               </g>
               <defs>
-                <clipPath id="clip0_6_319">
+                <clipPath id="clip0_6_319)">
                   <rect width="48" height="48" fill="white"></rect>
                 </clipPath>
               </defs>
@@ -34,7 +35,14 @@
           </div>
           <h2 class="text-[#181112] text-lg font-bold leading-tight tracking-[-0.015em]"><a href="../index.html">Occasion.ly</a></h2>
         </div>
-        <div class="flex flex-1 justify-end gap-8">
+        <div class="sm:hidden">
+          <button id="menu-button" class="text-[#181112] focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="hidden sm:flex flex-1 justify-end gap-8">
           <div class="flex items-center gap-9">
             <a class="text-[#181112] text-sm font-medium leading-normal" href="../index.html">Dashboard</a>
             <a class="text-[#181112] text-sm font-medium leading-normal" href="#">Events</a>
@@ -48,15 +56,10 @@
           </div>
         </div>
       </header>
-      <div class="px-40 flex flex-1 justify-center py-5">
+      <div class="px-4 sm:px-10 md:px-20 lg:px-40 flex flex-1 justify-center py-5">
         <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-          <div class="@container">
-            <div class="@[480px]:px-4 @[480px]:py-3">
-              <div
-                class="w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end overflow-hidden bg-white @[480px]:rounded-xl min-h-[218px]"
-                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCKWIbM2djCmOwwUWxZz-1JBGNkJneksFAAl2_crNtTEJQWW_X4O-cebzD1MxgSV7QHzrJNMmxfKbjhLHpNphqO8sIHbrfwQIXoB6rBCnC2Yqj5SS9OjANQgrlWFQb08rM8qMezfrk-cBrNhUxrBeYtm9WN5kz95HWzgQKkxLxfda4OHchyGmiSUJLLWRPWZKy8vWpSeQ28GUzcjH_b_Vfxv7G2jXzxwTYDJiyk3LoZstt2FUkg5jukAt4bKhv5eJ3q1PeuykeyEv8");'>
-              </div>
-            </div>
+          <div class="w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end overflow-hidden bg-white sm:rounded-xl min-h-[218px]"
+            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCKWIbM2djCmOwwUWxZz-1JBGNkJneksFAAl2_crNtTEJQWW_X4O-cebzD1MxgSV7QHzrJNMmxfKbjhLHpNphqO8sIHbrfwQIXoB6rBCnC2Yqj5SS9OjANQgrlWFQb08rM8qMezfrk-cBrNhUxrBeYtm9WN5kz95HWzgQKkxLxfda4OHchyGmiSUJLLWRPWZKy8vWpSeQ28GUzcjH_b_Vfxv7G2jXzxwTYDJiyk3LoZstt2FUkg5jukAt4bKhv5eJ3q1PeuykeyEv8");'>
           </div>
           <div class="flex flex-col gap-3 p-4">
             <div class="flex gap-6 justify-between">
@@ -68,13 +71,13 @@
             <p class="text-[#886369] text-sm font-normal leading-normal">Choose Your Event Date</p>
           </div>
           <div class="flex flex-wrap justify-between gap-3 p-4">
-            <p class="text-[#181112] tracking-light text-[32px] font-bold leading-tight min-w-72">Choose Your Event Date
+            <p class="text-[#181112] tracking-light text-2xl sm:text-3xl font-bold leading-tight min-w-72">Choose Your Event Date
             </p>
           </div>
           <div class="flex flex-wrap items-center justify-center gap-6 p-4">
             <div class="flex min-w-72 max-w-[336px] flex-1 flex-col gap-0.5">
               <div class="flex items-center p-1 justify-between">
-                <button>
+                <button id="prev-month">
                   <div class="text-[#181112] flex size-10 items-center justify-center" data-icon="CaretLeft"
                     data-size="18px" data-weight="regular">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="currentColor"
@@ -85,126 +88,8 @@
                     </svg>
                   </div>
                 </button>
-                <p class="text-[#181112] text-base font-bold leading-tight flex-1 text-center pr-10">October 2024</p>
-              </div>
-              <div class="grid grid-cols-7">
-                <p
-                  class="text-[#181112] text-[13px] font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">
-                  S</p>
-                <p
-                  class="text-[#181112] text-[13px] font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">
-                  M</p>
-                <p
-                  class="text-[#181112] text-[13px] font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">
-                  T</p>
-                <p
-                  class="text-[#181112] text-[13px] font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">
-                  W</p>
-                <p
-                  class="text-[#181112] text-[13px] font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">
-                  T</p>
-                <p
-                  class="text-[#181112] text-[13px] font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">
-                  F</p>
-                <p
-                  class="text-[#181112] text-[13px] font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">
-                  S</p>
-                <button class="h-12 w-full text-[#181112] col-start-4 text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">1</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">2</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">3</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">4</div>
-                </button>
-                <button class="h-12 w-full text-white text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full bg-[#ea4762]">5</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">6</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">7</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">8</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">9</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">10</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">11</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">12</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">13</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">14</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">15</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">16</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">17</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">18</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">19</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">20</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">21</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">22</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">23</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">24</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">25</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">26</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">27</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">28</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">29</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">30</div>
-                </button>
-              </div>
-            </div>
-            <div class="flex min-w-72 max-w-[336px] flex-1 flex-col gap-0.5">
-              <div class="flex items-center p-1 justify-between">
-                <p class="text-[#181112] text-base font-bold leading-tight flex-1 text-center pl-10">November 2024</p>
-                <button>
+                <p id="month-name" class="text-[#181112] text-base font-bold leading-tight flex-1 text-center">October 2024</p>
+                <button id="next-month">
                   <div class="text-[#181112] flex size-10 items-center justify-center" data-icon="CaretRight"
                     data-size="18px" data-weight="regular">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="currentColor"
@@ -218,127 +103,39 @@
               </div>
               <div class="grid grid-cols-7">
                 <p
-                  class="text-[#181112] text-[13px] font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">
+                  class="text-[#181112] text-xs sm:text-sm font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">
                   S</p>
                 <p
-                  class="text-[#181112] text-[13px] font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">
+                  class="text-[#181112] text-xs sm:text-sm font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">
                   M</p>
                 <p
-                  class="text-[#181112] text-[13px] font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">
+                  class="text-[#181112] text-xs sm:text-sm font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">
                   T</p>
                 <p
-                  class="text-[#181112] text-[13px] font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">
+                  class="text-[#181112] text-xs sm:text-sm font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">
                   W</p>
                 <p
-                  class="text-[#181112] text-[13px] font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">
+                  class="text-[#181112] text-xs sm:text-sm font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">
                   T</p>
                 <p
-                  class="text-[#181112] text-[13px] font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">
+                  class="text-[#181112] text-xs sm:text-sm font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">
                   F</p>
                 <p
-                  class="text-[#181112] text-[13px] font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">
+                  class="text-[#181112] text-xs sm:text-sm font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">
                   S</p>
-                <button class="h-12 w-full text-[#181112] col-start-4 text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">1</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">2</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">3</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">4</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">5</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">6</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">7</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">8</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">9</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">10</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">11</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">12</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">13</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">14</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">15</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">16</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">17</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">18</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">19</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">20</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">21</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">22</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">23</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">24</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">25</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">26</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">27</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">28</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">29</div>
-                </button>
-                <button class="h-12 w-full text-[#181112] text-sm font-medium leading-normal">
-                  <div class="flex size-full items-center justify-center rounded-full">30</div>
-                </button>
+                </div>
+                <div id="dates-grid" class="grid grid-cols-7">
               </div>
             </div>
           </div>
           <div class="flex justify-stretch">
             <div class="flex flex-1 gap-3 flex-wrap px-4 py-3 justify-between">
               <button onclick="window.location.href='../index.html'"
-                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#f4f0f1] text-[#181112] text-sm font-bold leading-normal tracking-[0.015em]">
+                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#f4f0f1] text-[#181112] text-sm font-bold leading-normal tracking-[0.015em] flex-1 sm:flex-none">
                 <span class="truncate">Back</span>
               </button>
               <button onclick="window.location.href='page2.html'"
-                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#ea4762] text-white text-sm font-bold leading-normal tracking-[0.015em]">
+                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-purple-500 text-white text-sm font-bold leading-normal tracking-[0.015em] flex-1 sm:flex-none">
                 <span class="truncate">Next</span>
               </button>
 
@@ -348,11 +145,7 @@
       </div>
     </div>
   </div>
-  <script>
-    // window.addEventListener('DOMContentLoaded', () => {
-    //   alert('Note: Currently, only the "Next" and "Back" buttons are working.');
-    // });
-  </script>
-</body>
+  <script src="js/calendar.js"></script>
+  </body>
 
 </html>
